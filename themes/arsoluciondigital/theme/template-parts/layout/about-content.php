@@ -17,7 +17,7 @@ $features = array(
 
 ?>
 
-<section class="py-16 sm:py-20 md:py-24 lg:py-28 bg-white">
+<section class="py-10 sm:py-20 md:py-24 lg:py-28 bg-white">
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
 		<!-- Section Title -->
@@ -33,37 +33,37 @@ $features = array(
 		</div>
 
 		<!-- Features Container -->
-		<div class="max-w-6xl mx-auto mt-12 sm:mt-16 md:mt-20 space-y-6 sm:space-y-8 md:space-y-10">
+		<div class="max-w-6xl mx-auto mt-12 sm:mt-16 md:mt-20 space-y-6 sm:space-y-8 md:space-y-10 px-4 sm:px-6">
 
 			<!-- Top Row - Two containers centered -->
-			<div class="flex flex-wrap justify-center items-center gap-4 sm:gap-5 md:gap-6">
+			<div class="flex flex-col sm:flex-row flex-wrap justify-center items-stretch gap-3 sm:gap-4 md:gap-5 lg:gap-6">
 				<!-- Feature 1 -->
-				<div class="px-5 sm:px-7 md:px-9 lg:px-11 py-3 sm:py-4 bg-[#D9D9D9] rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-					<p class="text-xs sm:text-sm md:text-base lg:text-lg text-gray-800 font-medium text-center leading-relaxed whitespace-nowrap">
+				<div class="flex-1 min-w-0 sm:max-w-md px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-3.5 md:py-4 bg-[#D9D9D9] rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+					<p class="text-[11px] sm:text-xs md:text-sm lg:text-base text-gray-800 font-medium text-center leading-snug sm:leading-relaxed break-words">
 						<?php echo esc_html( $features[0] ); ?>
 					</p>
 				</div>
 
 				<!-- Feature 2 -->
-				<div class="px-5 sm:px-7 md:px-9 lg:px-11 py-3 sm:py-4 bg-[#D9D9D9] rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-					<p class="text-xs sm:text-sm md:text-base lg:text-lg text-gray-800 font-medium text-center leading-relaxed whitespace-nowrap">
+				<div class="flex-1 min-w-0 sm:max-w-md px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-3.5 md:py-4 bg-[#D9D9D9] rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+					<p class="text-[11px] sm:text-xs md:text-sm lg:text-base text-gray-800 font-medium text-center leading-snug sm:leading-relaxed break-words">
 						<?php echo esc_html( $features[1] ); ?>
 					</p>
 				</div>
 			</div>
 
 			<!-- Bottom Row - Two containers shifted left -->
-			<div class="flex flex-wrap justify-center md:justify-start items-center gap-4 sm:gap-5 md:gap-6 md:ml-12 lg:ml-20 xl:ml-28">
+			<div class="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start items-stretch gap-3 sm:gap-4 md:gap-5 lg:gap-6 md:ml-8 lg:ml-16 xl:ml-24">
 				<!-- Feature 3 -->
-				<div class="px-5 sm:px-7 md:px-9 lg:px-11 py-3 sm:py-4 bg-[#D9D9D9] rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-					<p class="text-xs sm:text-sm md:text-base lg:text-lg text-gray-800 font-medium text-center leading-relaxed whitespace-nowrap">
+				<div class="flex-1 min-w-0 sm:max-w-md px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-3.5 md:py-4 bg-[#D9D9D9] rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+					<p class="text-[11px] sm:text-xs md:text-sm lg:text-base text-gray-800 font-medium text-center leading-snug sm:leading-relaxed break-words">
 						<?php echo esc_html( $features[2] ); ?>
 					</p>
 				</div>
 
 				<!-- Feature 4 -->
-				<div class="px-5 sm:px-7 md:px-9 lg:px-11 py-3 sm:py-4 bg-[#D9D9D9] rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-					<p class="text-xs sm:text-sm md:text-base lg:text-lg text-gray-800 font-medium text-center leading-relaxed whitespace-nowrap">
+				<div class="flex-1 min-w-0 sm:max-w-md px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-3.5 md:py-4 bg-[#D9D9D9] rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+					<p class="text-[11px] sm:text-xs md:text-sm lg:text-base text-gray-800 font-medium text-center leading-snug sm:leading-relaxed break-words">
 						<?php echo esc_html( $features[3] ); ?>
 					</p>
 				</div>

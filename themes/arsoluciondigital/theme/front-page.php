@@ -41,6 +41,9 @@
 			<!-- About Section -->
 			<?php get_template_part( 'template-parts/layout/about', 'content' ); ?>
 
+			<!-- Contact Section -->
+			<?php get_template_part( 'template-parts/layout/contact', 'content' ); ?>
+
 			<!-- Aquí van las demás secciones de la página de inicio -->
 
 		</main>
