@@ -32,6 +32,9 @@
 	<div id="content">
 		<main id="main" class="site-main">
 
+			<!-- Services Section -->
+			<?php get_template_part( 'template-parts/layout/services', 'content' ); ?>
+
 			<!-- Aquí van las demás secciones de la página de inicio -->
 
 		</main>
