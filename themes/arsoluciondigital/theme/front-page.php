@@ -35,6 +35,12 @@
 			<!-- Services Section -->
 			<?php get_template_part( 'template-parts/layout/services', 'content' ); ?>
 
+			<!-- Process/Timeline Section -->
+			<?php get_template_part( 'template-parts/layout/process', 'content' ); ?>
+
+			<!-- About Section -->
+			<?php get_template_part( 'template-parts/layout/about', 'content' ); ?>
+
 			<!-- Aquí van las demás secciones de la página de inicio -->
 
 		</main>

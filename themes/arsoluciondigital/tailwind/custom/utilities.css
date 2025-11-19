@@ -77,4 +77,91 @@
 		position: relative;
 		z-index: 1;
 	}
+
+	/* Contenedor con efecto de brillo en esquinas (superior derecha e inferior izquierda) */
+	.bg-glow-corners {
+		position: relative;
+		background-color: #12003C;
+		overflow: hidden;
+	}
+
+	/* Brillo lateral-superior derecha (pegado a la pantalla, ocupa hasta la mitad de altura) */
+	.bg-glow-corners::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 50%;
+		height: 50%;
+		max-width: 900px;
+		background-image: url('./assets/images/Elipse.png');
+		background-repeat: no-repeat;
+		background-position: top right;
+		background-size: cover;
+		opacity: 0.6;
+		z-index: 0;
+		pointer-events: none;
+		transform: scaleX(-1);
+	}
+
+	/* Brillo lateral-inferior izquierda (pegado a la pantalla, ocupa hasta la mitad de altura) */
+	.bg-glow-corners::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 50%;
+		height: 50%;
+		max-width: 900px;
+		background-image: url('./assets/images/Elipse.png');
+		background-repeat: no-repeat;
+		background-position: bottom left;
+		background-size: cover;
+		opacity: 0.6;
+		z-index: 0;
+		pointer-events: none;
+		transform: scale(-1, -1);
+	}
+
+	/* Ajustes responsive para brillos en esquinas */
+	@media (min-width: 640px) {
+		.bg-glow-corners::before,
+		.bg-glow-corners::after {
+			width: 55%;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.bg-glow-corners::before,
+		.bg-glow-corners::after {
+			width: 60%;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.bg-glow-corners::before,
+		.bg-glow-corners::after {
+			width: 50%;
+			opacity: 0.7;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		.bg-glow-corners::before,
+		.bg-glow-corners::after {
+			width: 45%;
+		}
+	}
+
+	@media (min-width: 1536px) {
+		.bg-glow-corners::before,
+		.bg-glow-corners::after {
+			width: 40%;
+		}
+	}
+
+	.bg-glow-corners > * {
+		position: relative;
+		z-index: 1;
+	}
 }
