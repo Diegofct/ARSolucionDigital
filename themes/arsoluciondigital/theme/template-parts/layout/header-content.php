@@ -28,15 +28,27 @@
 				   class="text-white hover:text-purple-300 transition-colors duration-300 font-medium text-sm xl:text-base">
 					Inicio
 				</a>
-				<a href="<?php echo esc_url( home_url( '/servicios' ) ); ?>"
+				<?php
+				$servicios_page = get_page_by_path( 'servicios' );
+				$servicios_url = $servicios_page ? get_permalink( $servicios_page->ID ) : home_url( '/servicios' );
+				?>
+				<a href="<?php echo esc_url( $servicios_url ); ?>"
 				   class="text-white hover:text-purple-300 transition-colors duration-300 font-medium text-sm xl:text-base">
 					Servicios
 				</a>
-				<a href="<?php echo esc_url( home_url( '/contacto' ) ); ?>"
+				<?php
+				$contacto_page = get_page_by_path( 'contacto' );
+				$contacto_url = $contacto_page ? get_permalink( $contacto_page->ID ) : home_url( '/contacto' );
+				?>
+				<a href="<?php echo esc_url( $contacto_url ); ?>"
 				   class="text-white hover:text-purple-300 transition-colors duration-300 font-medium text-sm xl:text-base">
 					Contacto
 				</a>
-				<a href="<?php echo esc_url( home_url( '/blog' ) ); ?>"
+				<?php
+				$blog_page = get_page_by_path( 'blog' );
+				$blog_url = $blog_page ? get_permalink( $blog_page->ID ) : home_url( '/blog' );
+				?>
+				<a href="<?php echo esc_url( $blog_url ); ?>"
 				   class="text-white hover:text-purple-300 transition-colors duration-300 font-medium text-sm xl:text-base">
 					Blog
 				</a>
@@ -44,7 +56,7 @@
 
 			<!-- Desktop CTA Button -->
 			<div class="hidden lg:flex flex-shrink-0">
-				<a href="<?php echo esc_url( home_url( '/contacto' ) ); ?>"
+				<a href="<?php echo esc_url( $contacto_url ); ?>"
 				   class="inline-block px-4 xl:px-6 py-2.5 xl:py-3 bg-gradient-to-r from-[#C7B3FF] to-[#7E52FF] text-black font-semibold rounded-lg hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl text-sm xl:text-base">
 					¿Hablamos?
 				</a>
@@ -76,15 +88,15 @@
 					   class="text-white hover:text-purple-300 transition-colors duration-300 font-semibold text-2xl sm:text-3xl py-2 border-b border-purple-500/30">
 						Inicio
 					</a>
-					<a href="<?php echo esc_url( home_url( '/servicios' ) ); ?>"
+					<a href="<?php echo esc_url( $servicios_url ); ?>"
 					   class="text-white hover:text-purple-300 transition-colors duration-300 font-semibold text-2xl sm:text-3xl py-2 border-b border-purple-500/30">
 						Servicios
 					</a>
-					<a href="<?php echo esc_url( home_url( '/contacto' ) ); ?>"
+					<a href="<?php echo esc_url( $contacto_url ); ?>"
 					   class="text-white hover:text-purple-300 transition-colors duration-300 font-semibold text-2xl sm:text-3xl py-2 border-b border-purple-500/30">
 						Contacto
 					</a>
-					<a href="<?php echo esc_url( home_url( '/blog' ) ); ?>"
+					<a href="<?php echo esc_url( $blog_url ); ?>"
 					   class="text-white hover:text-purple-300 transition-colors duration-300 font-semibold text-2xl sm:text-3xl py-2 border-b border-purple-500/30">
 						Blog
 					</a>
@@ -92,7 +104,7 @@
 
 				<!-- Mobile CTA Button -->
 				<div class="mt-8">
-					<a href="<?php echo esc_url( home_url( '/contacto' ) ); ?>"
+					<a href="<?php echo esc_url( $contacto_url ); ?>"
 					   class="block text-center px-8 py-4 bg-gradient-to-r from-[#C7B3FF] to-[#7E52FF] text-black font-bold rounded-lg hover:opacity-90 transition-all duration-300 shadow-xl text-lg sm:text-xl">
 						¿Hablamos?
 					</a>

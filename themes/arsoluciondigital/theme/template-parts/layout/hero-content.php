@@ -36,11 +36,19 @@ $hero_description = is_front_page()
 
 			<!-- Hero CTA Buttons -->
 			<div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
-				<a href="<?php echo esc_url( home_url( '/contacto' ) ); ?>"
+				<?php
+				$contacto_page = get_page_by_path( 'contacto' );
+				$contacto_url = $contacto_page ? get_permalink( $contacto_page->ID ) : home_url( '/contacto' );
+				?>
+				<a href="<?php echo esc_url( $contacto_url ); ?>"
 				   class="w-full sm:w-auto inline-block px-6 sm:px-8 py-3 sm:py-4 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-sm sm:text-base">
 					Agendar cita
 				</a>
-				<a href="<?php echo esc_url( home_url( '/servicios' ) ); ?>"
+				<?php
+				$servicios_page = get_page_by_path( 'servicios' );
+				$servicios_url = $servicios_page ? get_permalink( $servicios_page->ID ) : home_url( '/servicios' );
+				?>
+				<a href="<?php echo esc_url( $servicios_url ); ?>"
 				   class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-purple-900 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 text-sm sm:text-base">
 					Ver servicios
 					<svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

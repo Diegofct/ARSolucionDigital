@@ -98,7 +98,7 @@
 		background-repeat: no-repeat;
 		background-position: top right;
 		background-size: cover;
-		opacity: 0.6;
+		opacity: 1.0;
 		z-index: 0;
 		pointer-events: none;
 		transform: scaleX(-1);
@@ -161,6 +161,98 @@
 	}
 
 	.bg-glow-corners > * {
+		position: relative;
+		z-index: 1;
+	}
+
+	/* Contenedor con efecto de brillo en la parte inferior (para footer) */
+	.bg-glow-bottom {
+		position: relative;
+		background-color: #12003C;
+		overflow: hidden;
+	}
+
+	/* Brillo inferior que abarca todo el ancho y medio de alto */
+	.bg-glow-bottom::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transform: translateX(-50%) scaleY(-1);
+		width: 100%;
+		height: 500px;
+		max-width: 1800px;
+		background-image: url('./assets/images/Elipse.png');
+		background-repeat: no-repeat;
+		background-position: center bottom;
+		background-size: cover;
+		opacity: 0.7;
+		z-index: 0;
+		pointer-events: none;
+	}
+
+	.bg-glow-bottom::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%) scaleY(-1);
+		width: 100%;
+		height: 500px;
+		max-width: 1800px;
+		background-image: url('./assets/images/Elipse.png');
+		background-repeat: no-repeat;
+		background-position: center bottom;
+		background-size: cover;
+		opacity: 0.7;
+		z-index: 0;
+		pointer-events: none;
+	}
+	.bg-glow-bottom::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transform: translateX(-50%) scaleY(-1);
+		width: 100%;
+		height: 500px;
+		max-width: 1800px;
+		background-image: url('./assets/images/Elipse.png');
+		background-repeat: no-repeat;
+		background-position: center bottom;
+		background-size: cover;
+		opacity: 0.7;
+		z-index: 0;
+		pointer-events: none;
+	}
+
+	/* Ajustes responsive para el efecto de brillo inferior */
+	@media (min-width: 640px) {
+		.bg-glow-bottom::before {
+			opacity: 0.75;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.bg-glow-bottom::before {
+			opacity: 0.8;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.bg-glow-bottom::before {
+			opacity: 0.85;
+			max-width: 2000px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		.bg-glow-bottom::before {
+			opacity: 0.9;
+		}
+	}
+
+	.bg-glow-bottom > * {
 		position: relative;
 		z-index: 1;
 	}

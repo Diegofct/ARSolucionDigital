@@ -219,3 +219,282 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * ============================================================================
+ * Contact Form Management System
+ * ============================================================================
+ */
+
+/**
+ * Create contact messages table in database
+ */
+function arsoluciondigital_create_contact_table() {
+	global $wpdb;
+	$table_name = $wpdb->prefix . 'contact_messages';
+	$charset_collate = $wpdb->get_charset_collate();
+
+	$sql = "CREATE TABLE IF NOT EXISTS $table_name (
+		id mediumint(9) NOT NULL AUTO_INCREMENT,
+		name varchar(100) NOT NULL,
+		phone varchar(20) NOT NULL,
+		email varchar(100) NOT NULL,
+		company varchar(100) DEFAULT '',
+		message text NOT NULL,
+		privacy_accepted tinyint(1) NOT NULL DEFAULT 1,
+		status varchar(20) DEFAULT 'unread',
+		created_at datetime DEFAULT CURRENT_TIMESTAMP,
+		PRIMARY KEY  (id)
+	) $charset_collate;";
+
+	require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+	dbDelta( $sql );
+}
+
+// Create table on theme activation
+add_action( 'after_switch_theme', 'arsoluciondigital_create_contact_table' );
+
+/**
+ * Handle contact form submission via AJAX
+ */
+function arsoluciondigital_handle_contact_form() {
+	// Verify nonce for security
+	if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'contact_form_nonce' ) ) {
+		wp_send_json_error( array( 'message' => 'Error de seguridad. Por favor, recarga la página e intenta de nuevo.' ) );
+	}
+
+	// Sanitize and validate form data
+	$name = sanitize_text_field( $_POST['name'] );
+	$phone = sanitize_text_field( $_POST['phone'] );
+	$email = sanitize_email( $_POST['email'] );
+	$company = sanitize_text_field( $_POST['company'] );
+	$message = sanitize_textarea_field( $_POST['message'] );
+	$privacy = isset( $_POST['privacy'] ) ? 1 : 0;
+
+	// Validate required fields
+	if ( empty( $name ) || empty( $phone ) || empty( $email ) || empty( $message ) ) {
+		wp_send_json_error( array( 'message' => 'Por favor, completa todos los campos requeridos.' ) );
+	}
+
+	// Validate email format
+	if ( ! is_email( $email ) ) {
+		wp_send_json_error( array( 'message' => 'Por favor, introduce un correo electrónico válido.' ) );
+	}
+
+	// Validate privacy policy acceptance
+	if ( ! $privacy ) {
+		wp_send_json_error( array( 'message' => 'Debes aceptar las políticas de privacidad.' ) );
+	}
+
+	// Insert into database
+	global $wpdb;
+	$table_name = $wpdb->prefix . 'contact_messages';
+
+	$inserted = $wpdb->insert(
+		$table_name,
+		array(
+			'name' => $name,
+			'phone' => $phone,
+			'email' => $email,
+			'company' => $company,
+			'message' => $message,
+			'privacy_accepted' => $privacy,
+			'status' => 'unread',
+			'created_at' => current_time( 'mysql' ),
+		),
+		array( '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%s' )
+	);
+
+	if ( ! $inserted ) {
+		wp_send_json_error( array( 'message' => 'Hubo un error al guardar tu mensaje. Por favor, intenta de nuevo.' ) );
+	}
+
+	// Send email notification
+	$email_sent = arsoluciondigital_send_contact_email( $name, $phone, $email, $company, $message );
+
+	// Return success response
+	wp_send_json_success( array(
+		'message' => '¡Gracias! Tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto.',
+		'email_sent' => $email_sent
+	) );
+}
+
+add_action( 'wp_ajax_submit_contact_form', 'arsoluciondigital_handle_contact_form' );
+add_action( 'wp_ajax_nopriv_submit_contact_form', 'arsoluciondigital_handle_contact_form' );
+
+/**
+ * Send email notification when contact form is submitted
+ */
+function arsoluciondigital_send_contact_email( $name, $phone, $email, $company, $message ) {
+	// Email recipient - Change this to your email
+	$to = get_option( 'admin_email' ); // Uses WordPress admin email by default
+
+	// You can change this to a specific email:
+	// $to = 'tu-email@ejemplo.com';
+
+	// Email subject
+	$subject = 'Nuevo mensaje de contacto - AR Solución Digital';
+
+	// Email body
+	$body = "Has recibido un nuevo mensaje de contacto:\n\n";
+	$body .= "Nombre: $name\n";
+	$body .= "Teléfono: $phone\n";
+	$body .= "Email: $email\n";
+	$body .= "Empresa: $company\n\n";
+	$body .= "Mensaje:\n$message\n\n";
+	$body .= "---\n";
+	$body .= "Este mensaje fue enviado desde el formulario de contacto de " . get_bloginfo( 'name' );
+
+	// Email headers
+	$headers = array(
+		'Content-Type: text/plain; charset=UTF-8',
+		'From: ' . get_bloginfo( 'name' ) . ' <' . $email . '>',
+		'Reply-To: ' . $email,
+	);
+
+	// Send email
+	return wp_mail( $to, $subject, $body, $headers );
+}
+
+/**
+ * Add admin menu for contact messages
+ */
+function arsoluciondigital_add_contact_menu() {
+	add_menu_page(
+		'Mensajes de Contacto',           // Page title
+		'Mensajes',                        // Menu title
+		'manage_options',                  // Capability
+		'contact-messages',                // Menu slug
+		'arsoluciondigital_contact_messages_page', // Callback function
+		'dashicons-email',                 // Icon
+		25                                 // Position
+	);
+}
+add_action( 'admin_menu', 'arsoluciondigital_add_contact_menu' );
+
+/**
+ * Display contact messages admin page
+ */
+function arsoluciondigital_contact_messages_page() {
+	global $wpdb;
+	$table_name = $wpdb->prefix . 'contact_messages';
+
+	// Handle status update
+	if ( isset( $_GET['action'] ) && $_GET['action'] === 'mark_read' && isset( $_GET['message_id'] ) ) {
+		$message_id = intval( $_GET['message_id'] );
+		$wpdb->update(
+			$table_name,
+			array( 'status' => 'read' ),
+			array( 'id' => $message_id ),
+			array( '%s' ),
+			array( '%d' )
+		);
+	}
+
+	// Handle delete
+	if ( isset( $_GET['action'] ) && $_GET['action'] === 'delete' && isset( $_GET['message_id'] ) ) {
+		$message_id = intval( $_GET['message_id'] );
+		$wpdb->delete(
+			$table_name,
+			array( 'id' => $message_id ),
+			array( '%d' )
+		);
+	}
+
+	// Get all messages
+	$messages = $wpdb->get_results( "SELECT * FROM $table_name ORDER BY created_at DESC" );
+	$unread_count = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE status = 'unread'" );
+
+	?>
+	<div class="wrap">
+		<h1>Mensajes de Contacto</h1>
+
+		<?php if ( $unread_count > 0 ) : ?>
+			<div class="notice notice-info">
+				<p><strong><?php echo $unread_count; ?></strong> mensaje(s) sin leer</p>
+			</div>
+		<?php endif; ?>
+
+		<table class="wp-list-table widefat fixed striped">
+			<thead>
+				<tr>
+					<th width="5%">ID</th>
+					<th width="15%">Nombre</th>
+					<th width="12%">Teléfono</th>
+					<th width="15%">Email</th>
+					<th width="12%">Empresa</th>
+					<th width="25%">Mensaje</th>
+					<th width="10%">Fecha</th>
+					<th width="8%">Estado</th>
+					<th width="8%">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php if ( empty( $messages ) ) : ?>
+					<tr>
+						<td colspan="9" style="text-align: center; padding: 20px;">
+							No hay mensajes todavía.
+						</td>
+					</tr>
+				<?php else : ?>
+					<?php foreach ( $messages as $msg ) : ?>
+						<tr style="<?php echo $msg->status === 'unread' ? 'background-color: #f0f8ff;' : ''; ?>">
+							<td><?php echo esc_html( $msg->id ); ?></td>
+							<td><strong><?php echo esc_html( $msg->name ); ?></strong></td>
+							<td><?php echo esc_html( $msg->phone ); ?></td>
+							<td><a href="mailto:<?php echo esc_attr( $msg->email ); ?>"><?php echo esc_html( $msg->email ); ?></a></td>
+							<td><?php echo esc_html( $msg->company ); ?></td>
+							<td><?php echo esc_html( wp_trim_words( $msg->message, 15 ) ); ?></td>
+							<td><?php echo esc_html( date( 'd/m/Y H:i', strtotime( $msg->created_at ) ) ); ?></td>
+							<td>
+								<?php if ( $msg->status === 'unread' ) : ?>
+									<span class="dashicons dashicons-marker" style="color: #2271b1;"></span> Sin leer
+								<?php else : ?>
+									<span class="dashicons dashicons-yes" style="color: #00a32a;"></span> Leído
+								<?php endif; ?>
+							</td>
+							<td>
+								<?php if ( $msg->status === 'unread' ) : ?>
+									<a href="?page=contact-messages&action=mark_read&message_id=<?php echo $msg->id; ?>"
+									   class="button button-small">Marcar leído</a>
+								<?php endif; ?>
+								<a href="?page=contact-messages&action=delete&message_id=<?php echo $msg->id; ?>"
+								   class="button button-small"
+								   onclick="return confirm('¿Estás seguro de eliminar este mensaje?');">Eliminar</a>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+				<?php endif; ?>
+			</tbody>
+		</table>
+
+		<style>
+			.wp-list-table td {
+				vertical-align: middle;
+			}
+		</style>
+	</div>
+	<?php
+}
+
+/**
+ * Enqueue AJAX script for contact form
+ */
+function arsoluciondigital_enqueue_contact_form_script() {
+	// Always enqueue on all pages (simpler approach)
+	wp_localize_script( 'arsoluciondigital-script', 'contactFormAjax', array(
+		'ajax_url' => admin_url( 'admin-ajax.php' ),
+		'nonce' => wp_create_nonce( 'contact_form_nonce' ),
+	) );
+}
+add_action( 'wp_enqueue_scripts', 'arsoluciondigital_enqueue_contact_form_script' );
+
+/**
+ * Calculate reading time for posts
+ */
+function arsoluciondigital_reading_time() {
+	$content = get_post_field( 'post_content', get_the_ID() );
+	$word_count = str_word_count( strip_tags( $content ) );
+	$reading_time = ceil( $word_count / 200 ); // Average reading speed: 200 words per minute
+	return $reading_time;
+}

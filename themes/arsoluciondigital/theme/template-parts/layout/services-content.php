@@ -91,7 +91,11 @@ $services = array(
 
 										<!-- Button -->
 										<div class="flex justify-center items-center mt-auto">
-											<a href="<?php echo esc_url( home_url( '/servicios#' . sanitize_title( $service['title'] ) ) ); ?>"
+											<?php
+											$servicios_page = get_page_by_path( 'servicios' );
+											$servicios_url = $servicios_page ? get_permalink( $servicios_page->ID ) : home_url( '/servicios' );
+											?>
+											<a href="<?php echo esc_url( $servicios_url ); ?>"
 											   class="inline-block px-5 sm:px-6 md:px-7 lg:px-9 py-2 sm:py-2.5 md:py-3 bg-[#7E52FF] text-white font-semibold rounded-full hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl text-[10px] sm:text-xs md:text-sm lg:text-base whitespace-nowrap">
 												Ver más
 											</a>

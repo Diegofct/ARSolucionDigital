@@ -180,7 +180,11 @@ $process_steps = array(
 
 		<!-- CTA Button -->
 		<div class="flex justify-center">
-			<a href="<?php echo esc_url( home_url( '/contacto' ) ); ?>"
+			<?php
+			$contacto_page = get_page_by_path( 'contacto' );
+			$contacto_url = $contacto_page ? get_permalink( $contacto_page->ID ) : home_url( '/contacto' );
+			?>
+			<a href="<?php echo esc_url( $contacto_url ); ?>"
 			   class="inline-block px-6 sm:px-8 py-3 sm:py-3.5 bg-gradient-to-r from-[#C7B3FF] to-[#7E52FF] text-black font-semibold rounded-lg hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
 				¿Hablamos?
 			</a>

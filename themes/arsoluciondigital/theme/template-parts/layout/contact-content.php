@@ -14,12 +14,12 @@
 
 		<!-- Section Title -->
 		<div class="text-center mb-6 sm:mb-8 md:mb-10">
-			<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#7E52FF] mb-4 sm:mb-6">
+			<h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#7E52FF] mb-4 sm:mb-6">
 				¿Hablamos?
 			</h2>
 
 			<!-- Description -->
-			<p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto px-4">
+			<p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto px-4">
 				Déjanos tu información y te contaremos cómo nuestro servicio puede ayudarte a impulsar tu presencia digital y obtener resultados reales.
 			</p>
 		</div>
@@ -152,64 +152,73 @@
 	document.addEventListener('DOMContentLoaded', function() {
 		const form = document.getElementById('contact-form');
 		const messageDiv = document.getElementById('form-message');
+		const submitButton = form.querySelector('button[type="submit"]');
+		const submitButtonText = submitButton.innerHTML;
 
 		form.addEventListener('submit', function(e) {
 			e.preventDefault();
 
+			// Disable submit button to prevent double submissions
+			submitButton.disabled = true;
+			submitButton.innerHTML = '<svg class="animate-spin h-5 w-5 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
+
 			// Get form data
 			const formData = new FormData(form);
-			const data = {
+
+			// Prepare data for AJAX request
+			const data = new URLSearchParams({
+				action: 'submit_contact_form',
+				nonce: contactFormAjax.nonce,
 				name: formData.get('name'),
 				phone: formData.get('phone'),
 				email: formData.get('email'),
-				company: formData.get('company'),
+				company: formData.get('company') || '',
 				message: formData.get('message'),
-				privacy: formData.get('privacy')
-			};
+				privacy: formData.get('privacy') ? '1' : '0'
+			});
 
-			// Here you would typically send the data to your server
-			// For now, we'll just show a success message
-			console.log('Form data:', data);
-
-			// Show success message
-			messageDiv.textContent = '¡Gracias! Tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto.';
-			messageDiv.classList.remove('hidden', 'bg-red-100', 'text-red-700');
-			messageDiv.classList.add('bg-green-100', 'text-green-700');
-
-			// Reset form
-			form.reset();
-
-			// Hide message after 5 seconds
-			setTimeout(function() {
-				messageDiv.classList.add('hidden');
-			}, 5000);
-
-			// TODO: Implement actual form submission to WordPress
-			// You can use AJAX to send data to a custom WordPress endpoint
-			// Example:
-			/*
-			fetch(ajaxurl, {
+			// Send AJAX request
+			fetch(contactFormAjax.ajax_url, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded',
 				},
-				body: new URLSearchParams({
-					action: 'submit_contact_form',
-					...data
-				})
+				body: data
 			})
 			.then(response => response.json())
 			.then(result => {
 				if (result.success) {
 					// Show success message
+					messageDiv.textContent = result.data.message;
+					messageDiv.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+					messageDiv.classList.add('bg-green-100', 'text-green-700');
+
+					// Reset form
+					form.reset();
+
+					// Hide message after 5 seconds
+					setTimeout(function() {
+						messageDiv.classList.add('hidden');
+					}, 5000);
 				} else {
 					// Show error message
+					messageDiv.textContent = result.data.message || 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.';
+					messageDiv.classList.remove('hidden', 'bg-green-100', 'text-green-700');
+					messageDiv.classList.add('bg-red-100', 'text-red-700');
 				}
 			})
 			.catch(error => {
 				// Show error message
+				console.error('Error:', error);
+				messageDiv.textContent = 'Hubo un error de conexión. Por favor, verifica tu conexión a internet e intenta de nuevo.';
+				messageDiv.classList.remove('hidden', 'bg-green-100', 'text-green-700');
+				messageDiv.classList.add('bg-red-100', 'text-red-700');
+			})
+			.finally(() => {
+				// Re-enable submit button
+				submitButton.disabled = false;
+				submitButton.innerHTML = submitButtonText;
 			});
-			*/
 		});
 	});
 </script>
