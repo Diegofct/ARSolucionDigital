@@ -1,0 +1,83 @@
+0000.011 () Opened log file at time: Thu, 20 Nov 2025 16:08:50 +0000 on http://localhost/AR%20Solucion%20Digital
+0000.011 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.9 WP: 6.8.3 PHP: 8.2.12 (apache2handler, Windows NT DIEGODEV 10.0 build 26100 (Windows 11) AMD64) MySQL: 9.3.0 (max packet size=67108864) WPLANG: es_ES Server: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12 safe_mode: 0 max_execution_time: 900 memory_limit: 512M (used: 61.7M | 64M) multisite: N openssl: OpenSSL 3.0.11 19 Sep 2023 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.012 () Free space on disk containing Updraft's temporary directory: 84669.5 MB
+0000.030 () Restore setup, now closing connection and starting restore over AJAX.
+0000.008 () Opened log file at time: Thu, 20 Nov 2025 16:08:51 +0000 on http://localhost/AR%20Solucion%20Digital
+0000.009 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.9 WP: 6.8.3 PHP: 8.2.12 (apache2handler, Windows NT DIEGODEV 10.0 build 26100 (Windows 11) AMD64) MySQL: 9.3.0 (max packet size=67108864) WPLANG: es_ES Server: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12 safe_mode: 0 max_execution_time: 900 memory_limit: 512M (used: 58.4M | 62M) multisite: N openssl: OpenSSL 3.0.11 19 Sep 2023 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.009 () Free space on disk containing Updraft's temporary directory: 84668.7 MB
+0000.022 () Ensuring WP_Filesystem is setup for a restore
+0000.026 () WP_Filesystem is setup and ready for a restore
+0000.053 () Restore job started. Entities to restore: plugins, themes, uploads, others. Restore options: {"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.060 () PHP event: code E_WARNING: mkdir(): File exists (line 558, C:\xampp\htdocs\AR Solucion Digital\wp-admin\includes\class-wp-filesystem-direct.php)
+0000.071 () Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.073 () Entity: plugins
+0000.073 () restore_backup(backup_file=backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-plugins.zip, type=plugins, info=a:3:{s:4:"path";s:54:"C:\xampp\htdocs\AR Solucion Digital/wp-content/plugins";s:11:"description";s:7:"Plugins";s:20:"singular_description";s:6:"Plugin";}, last_one=)
+0000.074 () Unpacking backup... (backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-plugins.zip, 23.1 MB)
+0000.075 () Unzipping backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-plugins.zip to C:/xampp/htdocs/AR Solucion Digital/wp-content/upgrade/0448d5f9/ using UpdraftPlus_ZipArchive, starting index 0
+0001.070 () Unzip progress: 1002 out of 7428 files (2.3 MB, plugins/updraftplus/images/addons-images/onedrive.png)
+0004.100 () Unzip progress: 2003 out of 7428 files (24.7 MB, plugins/updraftplus/vendor/rackspace/php-opencloud/lib/OpenCloud/Common/Exceptions/UnsupportedFeatureExtension.php)
+0007.172 () Unzip progress: 3004 out of 7428 files (34.2 MB, plugins/wpforms-lite/assets/css/emails/summary.min.css)
+0010.378 () Unzip progress: 4005 out of 7428 files (51.7 MB, plugins/wpforms-lite/src/Integrations/ConstantContact/V3/Settings/FieldMapping.php)
+0013.502 () Unzip progress: 5006 out of 7428 files (58.1 MB, plugins/wpforms-lite/vendor_prefixed/square/square/src/Models/Builders/BulkDeleteBookingCustomAttributesRequestBuilder.php)
+0017.765 () Unzip progress: 6007 out of 7428 files (60.2 MB, plugins/wpforms-lite/vendor_prefixed/square/square/src/Models/CashPaymentDetails.php)
+0021.728 () Unzip progress: 7008 out of 7428 files (64.3 MB, plugins/wpforms-lite/vendor_prefixed/stripe/stripe-php/lib/ApiRequestor.php)
+0023.078 () Unzip progress: 7428 out of 7428 files (65.8 MB, plugins/wpforms-lite/wpforms.php)
+0023.084 () Moving old data: filesystem method / updraft_dir is potentially possible
+0023.087 () Moving old data: can potentially use wp_filesystem method / -old
+0023.087 () Moving old data out of the way...
+0026.429 () Top-level entities being moved: akismet, index.php, updraftplus, wp-mail-smtp, wpforms-lite
+0026.489 () Moving unpacked backup into place...
+0027.820 () Top-level entities being moved: akismet, index.php, updraftplus, wp-mail-smtp, wpforms-lite
+0027.839 () Cleaning up rubbish...
+0027.849 () Entity: themes
+0027.849 () restore_backup(backup_file=backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-themes.zip, type=themes, info=a:3:{s:4:"path";s:53:"C:\xampp\htdocs\AR Solucion Digital/wp-content/themes";s:11:"description";s:6:"Themes";s:20:"singular_description";s:5:"Theme";}, last_one=)
+0027.849 () Unpacking backup... (backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-themes.zip, 42.1 MB)
+0027.850 () Unzipping backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-themes.zip to C:/xampp/htdocs/AR Solucion Digital/wp-content/upgrade/60815012/ using UpdraftPlus_ZipArchive, starting index 0
+0028.790 () Unzip progress: 1504 out of 13755 files (412 B, themes/arsoluciondigital/.editorconfig)
+0030.941 () Unzip progress: 2505 out of 13755 files (20.3 MB, themes/arsoluciondigital/node_modules/browserslist/package.json)
+0032.709 () Unzip progress: 3506 out of 13755 files (23 MB, themes/arsoluciondigital/node_modules/colord/plugins/a11y.js)
+0034.508 () Unzip progress: 4507 out of 13755 files (27.4 MB, themes/arsoluciondigital/node_modules/define-data-property/index.d.ts)
+0035.993 () Unzip progress: 5508 out of 13755 files (29.3 MB, themes/arsoluciondigital/node_modules/es-abstract/2019/PromiseResolve.js)
+0037.283 () Unzip progress: 6509 out of 13755 files (30.1 MB, themes/arsoluciondigital/node_modules/es-abstract/2023/thisBigIntValue.js)
+0038.760 () Unzip progress: 7510 out of 13755 files (32.6 MB, themes/arsoluciondigital/node_modules/eslint/lib/rules/getter-return.js)
+0040.771 () Unzip progress: 8511 out of 13755 files (37.9 MB, themes/arsoluciondigital/node_modules/has-symbols/test/tests.js)
+0042.690 () Unzip progress: 9512 out of 13755 files (50.2 MB, themes/arsoluciondigital/node_modules/lodash/fp/symmetricDifference.js)
+0044.730 () Unzip progress: 10513 out of 13755 files (54.2 MB, themes/arsoluciondigital/node_modules/object-inspect/test/lowbyte.js)
+0046.828 () Unzip progress: 11514 out of 13755 files (69.8 MB, themes/arsoluciondigital/node_modules/punycode/package.json)
+0049.018 () Unzip progress: 12515 out of 13755 files (73.9 MB, themes/arsoluciondigital/node_modules/tar/dist/commonjs/replace.js.map)
+0051.287 () Unzip progress: 13516 out of 13755 files (88.2 MB, themes/twentytwentyfive/patterns/pricing-2-col.php)
+0051.985 () Unzip progress: 13755 out of 13755 files (94.2 MB, themes/twentytwentythree/theme.json)
+0051.997 () Moving old data: filesystem method / updraft_dir is potentially possible
+0051.999 () Moving old data: can potentially use wp_filesystem method / -old
+0052.000 () Moving old data out of the way...
+0055.953 () Top-level entities being moved: arsoluciondigital, index.php, twentytwentyfive, twentytwentyfour, twentytwentythree
+0055.955 () PHP event: code E_WARNING: rename(C:\xampp\htdocs\AR Solucion Digital/wp-content/themes/arsoluciondigital,C:\xampp\htdocs\AR Solucion Digital/wp-content/updraft/themes-old/arsoluciondigital): Acceso denegado (code: 5) (line 4712, C:\xampp\htdocs\AR Solucion Digital\wp-content\plugins\updraftplus\restorer.php)
+0055.955 () [Updraftplus] There was an error when performing the move operation by renaming or copying C:\xampp\htdocs\AR Solucion Digital/wp-content/themes/arsoluciondigital to C:\xampp\htdocs\AR Solucion Digital/wp-content/updraft/themes-old/arsoluciondigital: will attempt a recursive copy instead.
+0069.096 () Moving unpacked backup into place...
+0071.230 () Top-level entities being moved: arsoluciondigital, index.php, twentytwentyfive, twentytwentyfour, twentytwentythree
+0071.251 () Cleaning up rubbish...
+0071.299 () Entity: uploads
+0071.300 () restore_backup(backup_file=backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-uploads.zip, type=uploads, info=a:2:{s:4:"path";s:54:"C:\xampp\htdocs\AR Solucion Digital/wp-content/uploads";s:11:"description";s:7:"Uploads";}, last_one=)
+0071.300 () Unpacking backup... (backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-uploads.zip, 0.1 MB)
+0071.301 () Unzipping backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-uploads.zip to C:/xampp/htdocs/AR Solucion Digital/wp-content/upgrade/41039b00/ using UpdraftPlus_ZipArchive, starting index 0
+0071.334 () Unzip progress: 11 out of 11 files (250.8 KB, uploads/wpforms/cache/splash.json)
+0071.344 () Moving old data: filesystem method / updraft_dir is potentially possible
+0071.346 () Moving old data: can potentially use wp_filesystem method / -old
+0071.346 () Moving old data out of the way...
+0071.357 () Moving unpacked backup into place...
+0071.370 () Cleaning up rubbish...
+0071.421 () Entity: others
+0071.421 () restore_backup(backup_file=backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-others.zip, type=others, info=a:2:{s:4:"path";s:46:"C:\xampp\htdocs\AR Solucion Digital/wp-content";s:11:"description";s:6:"Others";}, last_one=1)
+0071.421 () Unpacking backup... (backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-others.zip, 37.7 MB)
+0071.422 () Unzipping backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-others.zip to C:/xampp/htdocs/AR Solucion Digital/wp-content/upgrade/04397209/ using UpdraftPlus_ZipArchive, starting index 0
+0072.737 () Unzip progress: 1002 out of 7101 files (5.2 MB, .git/objects/1b/725b07fc539d742a9b77f3370cb8659ef9b727)
+0074.255 () Unzip progress: 2003 out of 7101 files (13.2 MB, .git/objects/41/5b0d902e0579408a2a57b2179ee57bd48fc4c5)
+0075.770 () Unzip progress: 3004 out of 7101 files (18.2 MB, .git/objects/69/785e5187565b14c6de4ebb14a7c82fdae4c143)
+0077.269 () Unzip progress: 4005 out of 7101 files (23 MB, .git/objects/8f/473a45be47e56c8261e7e8863bd13ff08fd45b)
+0078.801 () Unzip progress: 5006 out of 7101 files (26.7 MB, .git/objects/b5/9accc9974ad0ffcb08f7a7479a7afdaa675935)
+0080.326 () Unzip progress: 6007 out of 7101 files (30.9 MB, .git/objects/db/32c34f2655ccba32029fd2b1e14ec0829a6510)
+0081.939 () Unzip progress: 7008 out of 7101 files (39 MB, languages/es_CO-bf23b24175490c2e46aaf92ff6a0c70f.json)
+0082.127 () Unzip progress: 7101 out of 7101 files (43.1 MB, languages/themes/twentytwentythree-es_ES.po)
+0082.170 () Cleaning up rubbish...
+0082.236 () Restore successful!
+0082.236 () Restore successful

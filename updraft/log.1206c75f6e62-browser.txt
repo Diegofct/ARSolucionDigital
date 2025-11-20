@@ -1,0 +1,55 @@
+0000.053 (R) [notice] Looking for plugins archive: file name: backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-plugins.zip
+0000.055 (R) [notice] Archive is expected to be size: 23644.6 KB: OK
+0000.062 (R) [notice] Looking for themes archive: file name: backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-themes.zip
+0000.063 (R) [notice] Archive is expected to be size: 43113.4 KB: OK
+0000.065 (R) [notice] Looking for uploads archive: file name: backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-uploads.zip
+0000.066 (R) [notice] Archive is expected to be size: 52.7 KB: OK
+0000.068 (R) [notice] Looking for others archive: file name: backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-others.zip
+0000.069 (R) [notice] Archive is expected to be size: 38619.8 KB: OK
+0000.071 (R) [notice] Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.074 (R) [notice] Unpacking backup... (backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-plugins.zip, 23.1 MB)
+0001.069 (R) [notice] Unzip progress: 1002 out of 7428 files (2.3 MB, plugins/updraftplus/images/addons-images/onedrive.png)
+0004.099 (R) [notice] Unzip progress: 2003 out of 7428 files (24.7 MB, plugins/updraftplus/vendor/rackspace/php-opencloud/lib/OpenCloud/Common/Exceptions/UnsupportedFeatureExtension.php)
+0007.171 (R) [notice] Unzip progress: 3004 out of 7428 files (34.2 MB, plugins/wpforms-lite/assets/css/emails/summary.min.css)
+0010.378 (R) [notice] Unzip progress: 4005 out of 7428 files (51.7 MB, plugins/wpforms-lite/src/Integrations/ConstantContact/V3/Settings/FieldMapping.php)
+0013.502 (R) [notice] Unzip progress: 5006 out of 7428 files (58.1 MB, plugins/wpforms-lite/vendor_prefixed/square/square/src/Models/Builders/BulkDeleteBookingCustomAttributesRequestBuilder.php)
+0017.764 (R) [notice] Unzip progress: 6007 out of 7428 files (60.2 MB, plugins/wpforms-lite/vendor_prefixed/square/square/src/Models/CashPaymentDetails.php)
+0021.728 (R) [notice] Unzip progress: 7008 out of 7428 files (64.3 MB, plugins/wpforms-lite/vendor_prefixed/stripe/stripe-php/lib/ApiRequestor.php)
+0023.078 (R) [notice] Unzip progress: 7428 out of 7428 files (65.8 MB, plugins/wpforms-lite/wpforms.php)
+0023.087 (R) [notice] Moving old data out of the way...
+0026.489 (R) [notice] Moving unpacked backup into place...
+0027.839 (R) [notice] Cleaning up rubbish...
+0027.849 (R) [notice] Unpacking backup... (backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-themes.zip, 42.1 MB)
+0028.790 (R) [notice] Unzip progress: 1504 out of 13755 files (412 B, themes/arsoluciondigital/.editorconfig)
+0030.941 (R) [notice] Unzip progress: 2505 out of 13755 files (20.3 MB, themes/arsoluciondigital/node_modules/browserslist/package.json)
+0032.709 (R) [notice] Unzip progress: 3506 out of 13755 files (23 MB, themes/arsoluciondigital/node_modules/colord/plugins/a11y.js)
+0034.508 (R) [notice] Unzip progress: 4507 out of 13755 files (27.4 MB, themes/arsoluciondigital/node_modules/define-data-property/index.d.ts)
+0035.993 (R) [notice] Unzip progress: 5508 out of 13755 files (29.3 MB, themes/arsoluciondigital/node_modules/es-abstract/2019/PromiseResolve.js)
+0037.283 (R) [notice] Unzip progress: 6509 out of 13755 files (30.1 MB, themes/arsoluciondigital/node_modules/es-abstract/2023/thisBigIntValue.js)
+0038.760 (R) [notice] Unzip progress: 7510 out of 13755 files (32.6 MB, themes/arsoluciondigital/node_modules/eslint/lib/rules/getter-return.js)
+0040.771 (R) [notice] Unzip progress: 8511 out of 13755 files (37.9 MB, themes/arsoluciondigital/node_modules/has-symbols/test/tests.js)
+0042.690 (R) [notice] Unzip progress: 9512 out of 13755 files (50.2 MB, themes/arsoluciondigital/node_modules/lodash/fp/symmetricDifference.js)
+0044.730 (R) [notice] Unzip progress: 10513 out of 13755 files (54.2 MB, themes/arsoluciondigital/node_modules/object-inspect/test/lowbyte.js)
+0046.827 (R) [notice] Unzip progress: 11514 out of 13755 files (69.8 MB, themes/arsoluciondigital/node_modules/punycode/package.json)
+0049.017 (R) [notice] Unzip progress: 12515 out of 13755 files (73.9 MB, themes/arsoluciondigital/node_modules/tar/dist/commonjs/replace.js.map)
+0051.286 (R) [notice] Unzip progress: 13516 out of 13755 files (88.2 MB, themes/twentytwentyfive/patterns/pricing-2-col.php)
+0051.985 (R) [notice] Unzip progress: 13755 out of 13755 files (94.2 MB, themes/twentytwentythree/theme.json)
+0052.000 (R) [notice] Moving old data out of the way...
+0069.096 (R) [notice] Moving unpacked backup into place...
+0071.251 (R) [notice] Cleaning up rubbish...
+0071.300 (R) [notice] Unpacking backup... (backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-uploads.zip, 0.1 MB)
+0071.334 (R) [notice] Unzip progress: 11 out of 11 files (250.8 KB, uploads/wpforms/cache/splash.json)
+0071.346 (R) [notice] Moving old data out of the way...
+0071.357 (R) [notice] Moving unpacked backup into place...
+0071.370 (R) [notice] Cleaning up rubbish...
+0071.421 (R) [notice] Unpacking backup... (backup_2025-11-20-1058_AR_Solucin_Digital_e968ff18d8d1-others.zip, 37.7 MB)
+0072.737 (R) [notice] Unzip progress: 1002 out of 7101 files (5.2 MB, .git/objects/1b/725b07fc539d742a9b77f3370cb8659ef9b727)
+0074.255 (R) [notice] Unzip progress: 2003 out of 7101 files (13.2 MB, .git/objects/41/5b0d902e0579408a2a57b2179ee57bd48fc4c5)
+0075.770 (R) [notice] Unzip progress: 3004 out of 7101 files (18.2 MB, .git/objects/69/785e5187565b14c6de4ebb14a7c82fdae4c143)
+0077.269 (R) [notice] Unzip progress: 4005 out of 7101 files (23 MB, .git/objects/8f/473a45be47e56c8261e7e8863bd13ff08fd45b)
+0078.801 (R) [notice] Unzip progress: 5006 out of 7101 files (26.7 MB, .git/objects/b5/9accc9974ad0ffcb08f7a7479a7afdaa675935)
+0080.326 (R) [notice] Unzip progress: 6007 out of 7101 files (30.9 MB, .git/objects/db/32c34f2655ccba32029fd2b1e14ec0829a6510)
+0081.939 (R) [notice] Unzip progress: 7008 out of 7101 files (39 MB, languages/es_CO-bf23b24175490c2e46aaf92ff6a0c70f.json)
+0082.127 (R) [notice] Unzip progress: 7101 out of 7101 files (43.1 MB, languages/themes/twentytwentythree-es_ES.po)
+0082.170 (R) [notice] Cleaning up rubbish...
+0082.236 (R) [notice] Restore successful!
