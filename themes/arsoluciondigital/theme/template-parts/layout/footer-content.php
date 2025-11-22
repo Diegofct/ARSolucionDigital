@@ -18,7 +18,7 @@
 			<!-- First Column -->
 			<div class="text-center md:text-center space-y-4 md:space-y-6">
 				<!-- Small Text -->
-				<p class="text-sm sm:text-base text-gray-400 uppercase tracking-wide">
+				<p class="text-sm sm:text-base text-white uppercase tracking-wide">
 					Te escuchamos
 				</p>
 

@@ -10,39 +10,39 @@
 // Definir pasos del proceso
 $process_steps = array(
 	array(
-		'position' => 'right', // Contenedor a la derecha
+		'position' => 'right',
 		'number' => '1',
 		'title' => 'Discovery 72h',
 		'description' => 'Problema, alcance mínimo y métricas (p. ej., tiempo de ciclo, errores, conversión).',
 		'side_text' => 'Empezamos por el objetivo de negocio y definimos 2–3 métricas de éxito.',
 	),
 	array(
-		'position' => 'left', // Contenedor a la izquierda
+		'position' => 'left',
 		'number' => '2',
-		'title' => 'Prototipo en 7 días',
-		'description' => 'Wireframe funcional o demo técnico que valida la solución antes de codificar.',
-		'side_text' => 'Validamos rápido si la dirección es correcta y ajustamos sobre la marcha.',
+		'title' => 'Prototipo y Plan',
+		'description' => 'Wireframe/checklist, backlog Top-6 y calendario de sprints.',
+		'side_text' => 'Construimos sólo lo esencial para mover esas métricas.',
 	),
 	array(
 		'position' => 'right',
 		'number' => '3',
-		'title' => 'Sprint de desarrollo',
-		'description' => 'Iteraciones de 1-2 semanas con entregas continuas y feedback constante.',
-		'side_text' => 'Desarrollamos en ciclos cortos para que veas progreso real cada semana.',
+		'title' => 'Build 7-30 días',
+		'description' => 'Entregas semanales, PRs pequeñas y validaciones continuas.',
+		'side_text' => 'Priorizamos impacto: menos reuniones, más entregas visibles.',
 	),
 	array(
 		'position' => 'left',
 		'number' => '4',
-		'title' => 'Testing & refinamiento',
-		'description' => 'Pruebas automatizadas, corrección de bugs y optimización de rendimiento.',
-		'side_text' => 'Garantizamos calidad con testing riguroso antes del lanzamiento.',
+		'title' => 'Go-live controlado:',
+		'description' => 'Checklist, observabilidad básica y reversión segura.',
+		'side_text' => 'Nos integramos con tu stack para reducir riesgos y acelerar.',
 	),
 	array(
 		'position' => 'right',
 		'number' => '5',
 		'title' => 'Deploy & handoff',
 		'description' => 'Lanzamiento a producción, documentación completa y transferencia de conocimiento.',
-		'side_text' => 'Tu equipo queda capacitado para mantener y evolucionar la solución.',
+		'side_text' => 'Método sencillo, centrado en resultados y con fechas cerradas.',
 	),
 );
 
@@ -56,7 +56,7 @@ $process_steps = array(
 			<!-- Small Badge -->
 			<div class="inline-block mb-6 sm:mb-8">
 				<span class="px-6 py-2 sm:px-8 sm:py-3 bg-gradient-to-r from-[#C7B3FF] to-[#7E52FF] text-white text-xs sm:text-sm font-semibold rounded-full shadow-lg">
-					Cómo trabajamos
+					Así trabajamos
 				</span>
 			</div>
 

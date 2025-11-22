@@ -1,0 +1,182 @@
+0000.010 () Opened log file at time: Thu, 20 Nov 2025 20:59:33 +0000 on http://localhost/AR%20Solucion%20Digital
+0000.011 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.9 WP: 6.8.3 PHP: 8.2.12 (apache2handler, Windows NT DIEGODEV 10.0 build 26100 (Windows 11) AMD64) MySQL: 9.3.0 (max packet size=67108864) WPLANG: es_ES Server: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12 safe_mode: 0 max_execution_time: 900 memory_limit: 512M (used: 61.7M | 64M) multisite: N openssl: OpenSSL 3.0.11 19 Sep 2023 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.011 () Free space on disk containing Updraft's temporary directory: 83733.1 MB
+0000.031 () Restore setup, now closing connection and starting restore over AJAX.
+0000.007 () Opened log file at time: Thu, 20 Nov 2025 20:59:34 +0000 on http://localhost/AR%20Solucion%20Digital
+0000.007 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.9 WP: 6.8.3 PHP: 8.2.12 (apache2handler, Windows NT DIEGODEV 10.0 build 26100 (Windows 11) AMD64) MySQL: 9.3.0 (max packet size=67108864) WPLANG: es_ES Server: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12 safe_mode: 0 max_execution_time: 900 memory_limit: 512M (used: 58.4M | 62M) multisite: N openssl: OpenSSL 3.0.11 19 Sep 2023 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.007 () Free space on disk containing Updraft's temporary directory: 83732.9 MB
+0000.017 () Ensuring WP_Filesystem is setup for a restore
+0000.020 () WP_Filesystem is setup and ready for a restore
+0000.027 () Restore job started. Entities to restore: plugins, themes, uploads, others, db. Restore options: {"include_unspecified_tables":false,"tables_to_restore":["wp_options","wp_users","wp_usermeta","wp_actionscheduler_actions","wp_actionscheduler_claims","wp_actionscheduler_groups","wp_actionscheduler_logs","wp_commentmeta","wp_comments","wp_links","wp_postmeta","wp_posts","wp_term_relationships","wp_term_taxonomy","wp_termmeta","wp_terms","wp_contact_messages","wp_wpforms_logs","wp_wpforms_payment_meta","wp_wpforms_payments","wp_wpforms_tasks_meta","wp_wpmailsmtp_debug_events","wp_wpmailsmtp_tasks_meta"],"tables_to_skip":[],"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.032 () PHP event: code E_WARNING: mkdir(): File exists (line 558, C:\xampp\htdocs\AR Solucion Digital\wp-admin\includes\class-wp-filesystem-direct.php)
+0000.050 () Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.054 () Entity: db
+0000.054 () restore_backup(backup_file=backup_2025-11-20-1551_AR_Solucin_Digital_c4431b2682cb-db.gz, type=db, info=a:0:{}, last_one=)
+0000.055 () Unpacking backup... (backup_2025-11-20-1551_AR_Solucin_Digital_c4431b2682cb-db.gz, 0.3 Mb)
+0000.055 () PHP event: code E_WARNING: mkdir(): File exists (line 558, C:\xampp\htdocs\AR Solucion Digital\wp-admin\includes\class-wp-filesystem-direct.php)
+0002.760 () Database successfully unpacked
+0002.762 () Restoring the database (on a large site this can take a long time - if it times out (which can happen if your web hosting company has configured your hosting to limit resources) then you should use a different method, such as phpMyAdmin)...
+0002.776 () Using direct MySQL access; value of use_mysqli is: 1
+0002.784 () SQL compatibility mode is: NO_AUTO_VALUE_ON_ZERO,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+0002.925 () Max packet size: 64 MB
+0002.925 () Entering maintenance mode
+0002.925 () Activando el modo de mantenimiento&#8230;
+0002.944 () Backup of: http://localhost/AR%20Solucion%20Digital
+0002.944 () Content URL: http://localhost/AR%20Solucion%20Digital/wp-content
+0002.944 () Uploads URL: http://localhost/AR%20Solucion%20Digital/wp-content/uploads
+0002.944 () Old table prefix: wp_
+0002.944 () UpdraftPlus plugin slug: updraftplus/updraftplus.php
+0002.944 () Site information: multisite=0
+0002.944 () Site information: sql_mode=NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+0002.946 () Skipped execution of SQL statement (unwanted or internally handled type=18): /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+0002.946 () New table prefix: 51_
+0002.952 () Processing table (InnoDB): wp_options - will restore as: 51_options
+0003.132 () Atomic restore: dropping original table (wp_options)
+0003.143 () Atomic restore: renaming new table (51_options) to final table name (wp_options)
+0003.155 () Restoring prior UD configuration (table: wp_options; keys: 4)
+0003.184 () Processing table (InnoDB): wp_users - will restore as: 51_users
+0003.227 () Atomic restore: dropping original table (wp_users)
+0003.238 () Atomic restore: renaming new table (51_users) to final table name (wp_users)
+0003.249 () Processing table (InnoDB): wp_usermeta - will restore as: 51_usermeta
+0003.288 () Atomic restore: dropping original table (wp_usermeta)
+0003.298 () Atomic restore: renaming new table (51_usermeta) to final table name (wp_usermeta)
+0003.308 () Processing table (InnoDB): wp_actionscheduler_actions - will restore as: 51_actionscheduler_actions
+0003.361 () Atomic restore: dropping original table (wp_actionscheduler_actions)
+0003.373 () Atomic restore: renaming new table (51_actionscheduler_actions) to final table name (wp_actionscheduler_actions)
+0003.386 () Processing table (InnoDB): wp_actionscheduler_claims - will restore as: 51_actionscheduler_claims
+0003.422 () Atomic restore: dropping original table (wp_actionscheduler_claims)
+0003.433 () Atomic restore: renaming new table (51_actionscheduler_claims) to final table name (wp_actionscheduler_claims)
+0003.445 () Processing table (InnoDB): wp_actionscheduler_groups - will restore as: 51_actionscheduler_groups
+0003.478 () Atomic restore: dropping original table (wp_actionscheduler_groups)
+0003.488 () Atomic restore: renaming new table (51_actionscheduler_groups) to final table name (wp_actionscheduler_groups)
+0003.497 () Processing table (InnoDB): wp_actionscheduler_logs - will restore as: 51_actionscheduler_logs
+0003.538 () Atomic restore: dropping original table (wp_actionscheduler_logs)
+0003.558 () Atomic restore: renaming new table (51_actionscheduler_logs) to final table name (wp_actionscheduler_logs)
+0003.570 () Processing table (InnoDB): wp_commentmeta - will restore as: 51_commentmeta
+0003.600 () Atomic restore: dropping original table (wp_commentmeta)
+0003.611 () Atomic restore: renaming new table (51_commentmeta) to final table name (wp_commentmeta)
+0003.623 () Processing table (InnoDB): wp_comments - will restore as: 51_comments
+0003.666 () Atomic restore: dropping original table (wp_comments)
+0003.676 () Atomic restore: renaming new table (51_comments) to final table name (wp_comments)
+0003.688 () Processing table (InnoDB): wp_links - will restore as: 51_links
+0003.723 () Atomic restore: dropping original table (wp_links)
+0003.736 () Atomic restore: renaming new table (51_links) to final table name (wp_links)
+0003.755 () Processing table (InnoDB): wp_postmeta - will restore as: 51_postmeta
+0003.824 () Atomic restore: dropping original table (wp_postmeta)
+0003.838 () Atomic restore: renaming new table (51_postmeta) to final table name (wp_postmeta)
+0003.848 () Processing table (InnoDB): wp_posts - will restore as: 51_posts
+0003.910 () Atomic restore: dropping original table (wp_posts)
+0003.921 () Atomic restore: renaming new table (51_posts) to final table name (wp_posts)
+0003.933 () Processing table (InnoDB): wp_term_relationships - will restore as: 51_term_relationships
+0003.968 () Atomic restore: dropping original table (wp_term_relationships)
+0003.980 () Atomic restore: renaming new table (51_term_relationships) to final table name (wp_term_relationships)
+0003.990 () Processing table (InnoDB): wp_term_taxonomy - will restore as: 51_term_taxonomy
+0004.022 () Atomic restore: dropping original table (wp_term_taxonomy)
+0004.032 () Database queries processed: 50 in 1.19 seconds
+0004.032 () Atomic restore: renaming new table (51_term_taxonomy) to final table name (wp_term_taxonomy)
+0004.043 () Processing table (InnoDB): wp_termmeta - will restore as: 51_termmeta
+0004.076 () Atomic restore: dropping original table (wp_termmeta)
+0004.086 () Atomic restore: renaming new table (51_termmeta) to final table name (wp_termmeta)
+0004.098 () Processing table (InnoDB): wp_terms - will restore as: 51_terms
+0004.136 () Atomic restore: dropping original table (wp_terms)
+0004.147 () Atomic restore: renaming new table (51_terms) to final table name (wp_terms)
+0004.155 () Processing table (InnoDB): wp_contact_messages - will restore as: 51_contact_messages
+0004.178 () Atomic restore: dropping original table (wp_contact_messages)
+0004.188 () Atomic restore: renaming new table (51_contact_messages) to final table name (wp_contact_messages)
+0004.200 () Processing table (InnoDB): wp_wpforms_logs - will restore as: 51_wpforms_logs
+0004.218 () Atomic restore: dropping original table (wp_wpforms_logs)
+0004.229 () Atomic restore: renaming new table (51_wpforms_logs) to final table name (wp_wpforms_logs)
+0004.240 () Processing table (InnoDB): wp_wpforms_payment_meta - will restore as: 51_wpforms_payment_meta
+0004.276 () Atomic restore: dropping original table (wp_wpforms_payment_meta)
+0004.286 () Atomic restore: renaming new table (51_wpforms_payment_meta) to final table name (wp_wpforms_payment_meta)
+0004.297 () Processing table (InnoDB): wp_wpforms_payments - will restore as: 51_wpforms_payments
+0004.344 () Atomic restore: dropping original table (wp_wpforms_payments)
+0004.357 () Atomic restore: renaming new table (51_wpforms_payments) to final table name (wp_wpforms_payments)
+0004.369 () Processing table (InnoDB): wp_wpforms_tasks_meta - will restore as: 51_wpforms_tasks_meta
+0004.392 () Atomic restore: dropping original table (wp_wpforms_tasks_meta)
+0004.404 () Atomic restore: renaming new table (51_wpforms_tasks_meta) to final table name (wp_wpforms_tasks_meta)
+0004.417 () Processing table (InnoDB): wp_wpmailsmtp_debug_events - will restore as: 51_wpmailsmtp_debug_events
+0004.438 () Atomic restore: dropping original table (wp_wpmailsmtp_debug_events)
+0004.451 () Atomic restore: renaming new table (51_wpmailsmtp_debug_events) to final table name (wp_wpmailsmtp_debug_events)
+0004.463 () Processing table (InnoDB): wp_wpmailsmtp_tasks_meta - will restore as: 51_wpmailsmtp_tasks_meta
+0004.479 () Skipped execution of SQL statement (unwanted or internally handled type=18): /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+0004.503 () Unlocking database and leaving maintenance mode
+0004.503 () Desactivando el modo de mantenimiento&#8230;
+0004.504 () Atomic restore: dropping original table (wp_wpmailsmtp_tasks_meta)
+0004.515 () Atomic restore: renaming new table (51_wpmailsmtp_tasks_meta) to final table name (wp_wpmailsmtp_tasks_meta)
+0004.525 () Finished: lines processed: 74 in 1.69 seconds
+0004.526 () Cleaning up rubbish...
+0004.527 () Begin search and replace (updraftplus_restored_db)
+0004.527 () [Database-replace-site-url] Database: search and replace site URL
+0004.527 () This option was not selected.
+0004.540 () Entity: plugins
+0004.540 () restore_backup(backup_file=backup_2025-11-20-1551_AR_Solucin_Digital_c4431b2682cb-plugins.zip, type=plugins, info=a:3:{s:4:"path";s:54:"C:\xampp\htdocs\AR Solucion Digital/wp-content/plugins";s:11:"description";s:7:"Plugins";s:20:"singular_description";s:6:"Plugin";}, last_one=)
+0004.542 () Unpacking backup... (backup_2025-11-20-1551_AR_Solucin_Digital_c4431b2682cb-plugins.zip, 23.1 MB)
+0004.545 () Unzipping backup_2025-11-20-1551_AR_Solucin_Digital_c4431b2682cb-plugins.zip to C:/xampp/htdocs/AR Solucion Digital/wp-content/upgrade/56ecc926/ using UpdraftPlus_ZipArchive, starting index 0
+0005.523 () Unzip progress: 1002 out of 7428 files (2.3 MB, plugins/updraftplus/images/addons-images/onedrive.png)
+0008.506 () Unzip progress: 2003 out of 7428 files (24.7 MB, plugins/updraftplus/vendor/rackspace/php-opencloud/lib/OpenCloud/Common/Exceptions/UnsupportedFeatureExtension.php)
+0011.373 () Unzip progress: 3004 out of 7428 files (34.2 MB, plugins/wpforms-lite/assets/css/emails/summary.min.css)
+0016.143 () Unzip progress: 4005 out of 7428 files (51.7 MB, plugins/wpforms-lite/src/Integrations/ConstantContact/V3/Settings/FieldMapping.php)
+0019.357 () Unzip progress: 5006 out of 7428 files (58.1 MB, plugins/wpforms-lite/vendor_prefixed/square/square/src/Models/Builders/BulkDeleteBookingCustomAttributesRequestBuilder.php)
+0024.381 () Unzip progress: 6007 out of 7428 files (60.2 MB, plugins/wpforms-lite/vendor_prefixed/square/square/src/Models/CashPaymentDetails.php)
+0028.797 () Unzip progress: 7008 out of 7428 files (64.3 MB, plugins/wpforms-lite/vendor_prefixed/stripe/stripe-php/lib/ApiRequestor.php)
+0030.364 () Unzip progress: 7428 out of 7428 files (65.8 MB, plugins/wpforms-lite/wpforms.php)
+0030.372 () Moving old data: filesystem method / updraft_dir is potentially possible
+0030.373 () Moving old data: can potentially use wp_filesystem method / -old
+0030.374 () Moving old data out of the way...
+0034.218 () Top-level entities being moved: akismet, index.php, updraftplus, wp-mail-smtp, wpforms-lite
+0034.289 () Moving unpacked backup into place...
+0036.471 () Top-level entities being moved: akismet, index.php, updraftplus, wp-mail-smtp, wpforms-lite
+0036.490 () Cleaning up rubbish...
+0036.499 () Entity: themes
+0036.499 () restore_backup(backup_file=backup_2025-11-20-1551_AR_Solucin_Digital_c4431b2682cb-themes.zip, type=themes, info=a:3:{s:4:"path";s:53:"C:\xampp\htdocs\AR Solucion Digital/wp-content/themes";s:11:"description";s:6:"Themes";s:20:"singular_description";s:5:"Theme";}, last_one=)
+0036.501 () Unpacking backup... (backup_2025-11-20-1551_AR_Solucin_Digital_c4431b2682cb-themes.zip, 42.1 MB)
+0036.502 () Unzipping backup_2025-11-20-1551_AR_Solucin_Digital_c4431b2682cb-themes.zip to C:/xampp/htdocs/AR Solucion Digital/wp-content/upgrade/c4121e2a/ using UpdraftPlus_ZipArchive, starting index 0
+0037.664 () Unzip progress: 1504 out of 13755 files (412 B, themes/arsoluciondigital/.editorconfig)
+0040.107 () Unzip progress: 2505 out of 13755 files (20.3 MB, themes/arsoluciondigital/node_modules/browserslist/package.json)
+0042.097 () Unzip progress: 3506 out of 13755 files (23 MB, themes/arsoluciondigital/node_modules/colord/plugins/a11y.js)
+0044.048 () Unzip progress: 4507 out of 13755 files (27.4 MB, themes/arsoluciondigital/node_modules/define-data-property/index.d.ts)
+0045.885 () Unzip progress: 5508 out of 13755 files (29.3 MB, themes/arsoluciondigital/node_modules/es-abstract/2019/PromiseResolve.js)
+0047.150 () Unzip progress: 6509 out of 13755 files (30.1 MB, themes/arsoluciondigital/node_modules/es-abstract/2023/thisBigIntValue.js)
+0048.661 () Unzip progress: 7510 out of 13755 files (32.6 MB, themes/arsoluciondigital/node_modules/eslint/lib/rules/getter-return.js)
+0051.114 () Unzip progress: 8511 out of 13755 files (37.9 MB, themes/arsoluciondigital/node_modules/has-symbols/test/tests.js)
+0053.345 () Unzip progress: 9512 out of 13755 files (50.2 MB, themes/arsoluciondigital/node_modules/lodash/fp/symmetricDifference.js)
+0055.734 () Unzip progress: 10513 out of 13755 files (54.2 MB, themes/arsoluciondigital/node_modules/object-inspect/test/lowbyte.js)
+0057.812 () Unzip progress: 11514 out of 13755 files (69.8 MB, themes/arsoluciondigital/node_modules/punycode/package.json)
+0059.884 () Unzip progress: 12515 out of 13755 files (73.9 MB, themes/arsoluciondigital/node_modules/tar/dist/commonjs/replace.js.map)
+0062.247 () Unzip progress: 13516 out of 13755 files (88.2 MB, themes/twentytwentyfive/patterns/pricing-2-col.php)
+0063.240 () Unzip progress: 13755 out of 13755 files (94.2 MB, themes/twentytwentythree/theme.json)
+0063.255 () Moving old data: filesystem method / updraft_dir is potentially possible
+0063.257 () Moving old data: can potentially use wp_filesystem method / -old
+0063.257 () Moving old data out of the way...
+0068.085 () Top-level entities being moved: arsoluciondigital, index.php, twentytwentyfive, twentytwentyfour, twentytwentythree
+0068.098 () PHP event: code E_WARNING: rename(C:\xampp\htdocs\AR Solucion Digital/wp-content/themes/arsoluciondigital,C:\xampp\htdocs\AR Solucion Digital/wp-content/updraft/themes-old/arsoluciondigital): Acceso denegado (code: 5) (line 4712, C:\xampp\htdocs\AR Solucion Digital\wp-content\plugins\updraftplus\restorer.php)
+0068.098 () [Updraftplus] There was an error when performing the move operation by renaming or copying C:\xampp\htdocs\AR Solucion Digital/wp-content/themes/arsoluciondigital to C:\xampp\htdocs\AR Solucion Digital/wp-content/updraft/themes-old/arsoluciondigital: will attempt a recursive copy instead.
+0080.197 () Moving unpacked backup into place...
+0081.946 () Top-level entities being moved: arsoluciondigital, index.php, twentytwentyfive, twentytwentyfour, twentytwentythree
+0081.965 () Cleaning up rubbish...
+0081.973 () Entity: uploads
+0081.973 () restore_backup(backup_file=backup_2025-11-20-1551_AR_Solucin_Digital_c4431b2682cb-uploads.zip, type=uploads, info=a:2:{s:4:"path";s:54:"C:\xampp\htdocs\AR Solucion Digital/wp-content/uploads";s:11:"description";s:7:"Uploads";}, last_one=)
+0081.974 () Unpacking backup... (backup_2025-11-20-1551_AR_Solucin_Digital_c4431b2682cb-uploads.zip, 0.1 MB)
+0081.975 () Unzipping backup_2025-11-20-1551_AR_Solucin_Digital_c4431b2682cb-uploads.zip to C:/xampp/htdocs/AR Solucion Digital/wp-content/upgrade/4f5741c8/ using UpdraftPlus_ZipArchive, starting index 0
+0081.988 () Unzip progress: 11 out of 11 files (250.8 KB, uploads/wpforms/cache/splash.json)
+0081.989 () Moving old data: filesystem method / updraft_dir is potentially possible
+0081.990 () Moving old data: can potentially use wp_filesystem method / -old
+0081.990 () Moving old data out of the way...
+0081.994 () Moving unpacked backup into place...
+0082.000 () Cleaning up rubbish...
+0082.008 () Entity: others
+0082.008 () restore_backup(backup_file=backup_2025-11-20-1551_AR_Solucin_Digital_c4431b2682cb-others.zip, type=others, info=a:2:{s:4:"path";s:46:"C:\xampp\htdocs\AR Solucion Digital/wp-content";s:11:"description";s:6:"Others";}, last_one=1)
+0082.011 () Unpacking backup... (backup_2025-11-20-1551_AR_Solucin_Digital_c4431b2682cb-others.zip, 37.5 MB)
+0082.012 () Unzipping backup_2025-11-20-1551_AR_Solucin_Digital_c4431b2682cb-others.zip to C:/xampp/htdocs/AR Solucion Digital/wp-content/upgrade/89820f06/ using UpdraftPlus_ZipArchive, starting index 0
+0083.346 () Unzip progress: 1002 out of 7062 files (4.4 MB, .git-old/objects/1c/c19c909bc321530932981f9f24a297f92c94f1)
+0084.883 () Unzip progress: 2003 out of 7062 files (12.5 MB, .git-old/objects/42/7db85fe3994a2c58604b5cced268a20a8cb402)
+0086.761 () Unzip progress: 3004 out of 7062 files (17.4 MB, .git-old/objects/6a/c43c943d5770b3dcaf818f8f64aa574f6cba1d)
+0088.616 () Unzip progress: 4005 out of 7062 files (22.2 MB, .git-old/objects/90/476589d50c3f86731c4d4740376ff9a3432999)
+0090.527 () Unzip progress: 5006 out of 7062 files (25.9 MB, .git-old/objects/b6/fa8c669329c0407b40ba18938ae72d65c042eb)
+0092.113 () Unzip progress: 6007 out of 7062 files (30.2 MB, .git-old/objects/dc/abb9723c0ad2ddcd9116cd953a4654a7ea5103)
+0093.843 () Unzip progress: 7008 out of 7062 files (39.9 MB, languages/es_ES-7233008897033de5ee0d14f86a42a65a.json)
+0093.951 () Unzip progress: 7062 out of 7062 files (42.2 MB, languages/themes/twentytwentythree-es_ES.po)
+0093.995 () Cleaning up rubbish...
+0094.064 () Restore successful!
+0094.064 () Restore successful

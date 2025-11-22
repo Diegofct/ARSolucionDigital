@@ -28,7 +28,7 @@ $features = array(
 
 			<!-- Description -->
 			<p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-5xl mx-auto px-4">
-				Más de una década creando productos web, automatizando procesos e integrando sistemas en entornos reales de alto tráfico. Aplicamos prácticas de arquitectura y operación aprendidas en empresas líderes para entregar resultados medibles en semanas.
+				<span class="text-[#000000] font-bold"> Más de una década </span> creando productos web, <span class="text-[#000000] font-bold">automatizando procesos e integrando sistemas en entornos reales de alto tráfico.</span> Aplicamos prácticas de arquitectura y operación aprendidas en empresas líderes para entregar resultados medibles en semanas.
 			</p>
 		</div>
 

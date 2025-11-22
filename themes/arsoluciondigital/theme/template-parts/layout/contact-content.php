@@ -7,10 +7,22 @@
  * @package arsoluciondigital
  */
 
+// Detectar si estamos en la página de contacto o en la sección de la página de inicio
+$is_contact_page = is_page_template( 'page-contacto.php' ) || is_page( 'contacto' );
+
+// Clases según el contexto
+if ( $is_contact_page ) {
+	// Página de contacto: sin fondo (el wrapper bg-glow-effect lo maneja)
+	$section_classes = 'min-h-[calc(100vh-80px)] flex items-center justify-center py-12 sm:py-16 md:py-20 lg:py-24';
+} else {
+	// Sección en página de inicio: con fondo oscuro propio
+	$section_classes = 'py-16 sm:py-20 md:py-24 lg:py-28 bg-[#12003C]';
+}
+
 ?>
 
-<section class="pt-16 sm:pt-20 md:pt-24 lg:pt-28 bg-[#12003C]">
-	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<section class="<?php echo esc_attr( $section_classes ); ?>">
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 <?php echo $is_contact_page ? 'w-full' : ''; ?>">
 
 		<!-- Section Title -->
 		<div class="text-center mb-6 sm:mb-8 md:mb-10">
@@ -19,35 +31,29 @@
 			</h2>
 
 			<!-- Description -->
-			<p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto px-4">
+			<p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 leading-[1.4] max-w-3xl mx-auto px-4">
 				Déjanos tu información y te contaremos cómo nuestro servicio puede ayudarte a impulsar tu presencia digital y obtener resultados reales.
 			</p>
 		</div>
 
 		<!-- Contact Form -->
-		<div class="max-w-2xl mx-auto mt-8 sm:mt-10 md:mt-12">
+		<div class="max-w-xl mx-auto mt-8 sm:mt-10 md:mt-12">
 			<form id="contact-form" class="bg-[#F5F5F5] rounded-2xl p-5 sm:p-6 md:p-8 space-y-4 sm:space-y-5">
 
 				<!-- Name and Phone Fields - Side by side -->
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
 					<!-- Name Field -->
 					<div>
-						<label for="name" class="block text-gray-800 text-xs sm:text-sm font-medium mb-2">
-							Nombre
-						</label>
 						<input type="text"
 							   id="name"
 							   name="name"
 							   required
-							   class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white text-gray-900 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7E52FF] focus:border-transparent outline-none transition-all duration-300 text-sm"
-							   placeholder="Tu nombre completo">
+							   class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white text-gray-900 rounded-2xl focus:ring-2 focus:ring-[#7E52FF] outline-none transition-all duration-300 text-sm"
+							   placeholder="Nombre">
 					</div>
 
 					<!-- Phone Field -->
 					<div>
-						<label for="phone" class="block text-gray-800 text-xs sm:text-sm font-medium mb-2">
-							Número
-						</label>
 						<div class="relative">
 							<div class="absolute inset-y-0 right-0 pr-3 sm:pr-4 flex items-center pointer-events-none">
 								<svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#7E52FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,17 +64,14 @@
 								   id="phone"
 								   name="phone"
 								   required
-								   class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white text-gray-900 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7E52FF] focus:border-transparent outline-none transition-all duration-300 text-sm"
-								   placeholder="Tu número de teléfono">
+								   class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white text-gray-900 rounded-2xl focus:ring-2 focus:ring-[#7E52FF] outline-none transition-all duration-300 text-sm"
+								   placeholder="Tu número">
 						</div>
 					</div>
 				</div>
 
 				<!-- Email Field -->
 				<div>
-					<label for="email" class="block text-gray-800 text-xs sm:text-sm font-medium mb-2">
-						Correo
-					</label>
 					<div class="relative">
 						<div class="absolute inset-y-0 right-0 pr-3 sm:pr-4 flex items-center pointer-events-none">
 							<svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#7E52FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,28 +82,22 @@
 							   id="email"
 							   name="email"
 							   required
-							   class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white text-gray-900 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7E52FF] focus:border-transparent outline-none transition-all duration-300 text-sm"
-							   placeholder="tu@email.com">
+							   class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white text-gray-900 rounded-2xl focus:ring-2 focus:ring-[#7E52FF] outline-none transition-all duration-300 text-sm"
+							   placeholder="Tu correo">
 					</div>
 				</div>
 
 				<!-- Company Field -->
 				<div>
-					<label for="company" class="block text-gray-800 text-xs sm:text-sm font-medium mb-2">
-						Tu empresa
-					</label>
 					<input type="text"
 						   id="company"
 						   name="company"
-						   class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white text-gray-900 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7E52FF] focus:border-transparent outline-none transition-all duration-300 text-sm"
-						   placeholder="Nombre de tu empresa">
+						   class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white text-gray-900 rounded-2xl focus:ring-2 focus:ring-[#7E52FF] outline-none transition-all duration-300 text-sm"
+						   placeholder="Empresa">
 				</div>
 
 				<!-- Message Field -->
 				<div>
-					<label for="message" class="block text-gray-800 text-xs sm:text-sm font-medium mb-2">
-						Deja tu mensaje
-					</label>
 					<div class="relative">
 						<div class="absolute top-3 right-0 pr-3 sm:pr-4 pointer-events-none">
 							<svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#7E52FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,8 +108,8 @@
 								  name="message"
 								  rows="4"
 								  required
-								  class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white text-gray-900 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7E52FF] focus:border-transparent outline-none transition-all duration-300 resize-none text-sm"
-								  placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+								  class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white text-gray-900 rounded-2xl focus:ring-2 focus:ring-[#7E52FF] outline-none transition-all duration-300 resize-none text-sm"
+								  placeholder="Deja tu mensaje"></textarea>
 					</div>
 				</div>
 

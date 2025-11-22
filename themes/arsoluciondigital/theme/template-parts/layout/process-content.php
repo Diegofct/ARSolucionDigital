@@ -55,7 +55,7 @@ $process_steps = array(
 		<div class="text-center mb-12 sm:mb-16 md:mb-20">
 			<!-- Small Badge -->
 			<div class="inline-block mb-6 sm:mb-8">
-				<span class="px-6 py-2 sm:px-8 sm:py-3 bg-gradient-to-r from-[#C7B3FF] to-[#7E52FF] text-white text-xs sm:text-sm font-semibold rounded-full shadow-lg">
+				<span class="px-6 py-2 sm:px-8 sm:py-3 bg-gradient-to-r from-[#7E52FF] to-[#C7B3FF] text-white text-xs sm:text-sm font-semibold rounded-full shadow-lg">
 					Así trabajamos
 				</span>
 			</div>
@@ -100,7 +100,7 @@ $process_steps = array(
 
 							<!-- Right Side Content Box -->
 							<div class="w-full lg:w-1/2 lg:pl-28 xl:pl-32">
-								<div class="bg-[#CCCCCC] rounded-xl p-5 sm:p-6 md:p-7 lg:p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+								<div class="bg-[#F3F7F8] rounded-xl p-5 sm:p-6 md:p-7 lg:p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
 									<h3 class="text-lg sm:text-xl md:text-2xl font-bold text-black mb-4">
 										<?php echo esc_html( $step['number'] . '. ' . $step['title'] ); ?>
 									</h3>
@@ -125,7 +125,7 @@ $process_steps = array(
 
 							<!-- Left Side Content Box -->
 							<div class="w-full lg:w-1/2 lg:pr-28 xl:pr-32">
-								<div class="bg-[#CCCCCC] rounded-xl p-5 sm:p-6 md:p-7 lg:p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+								<div class="bg-[#F3F7F8] rounded-xl p-5 sm:p-6 md:p-7 lg:p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
 									<h3 class="text-lg sm:text-xl md:text-2xl font-bold text-black mb-4">
 										<?php echo esc_html( $step['number'] . '. ' . $step['title'] ); ?>
 									</h3>
@@ -185,7 +185,7 @@ $process_steps = array(
 			$contacto_url = $contacto_page ? get_permalink( $contacto_page->ID ) : home_url( '/contacto' );
 			?>
 			<a href="<?php echo esc_url( $contacto_url ); ?>"
-			   class="inline-block px-6 sm:px-8 py-3 sm:py-3.5 bg-gradient-to-r from-[#C7B3FF] to-[#7E52FF] text-black font-semibold rounded-lg hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
+			   class="inline-block px-6 sm:px-8 py-3 sm:py-3.5 bg-gradient-to-r from-[#7E52FF] to-[#C7B3FF] text-black font-semibold rounded-full hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
 				¿Hablamos?
 			</a>
 		</div>

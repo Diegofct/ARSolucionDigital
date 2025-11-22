@@ -44,13 +44,13 @@ $services = array(
 
 			<!-- Features List -->
 			<div class="max-w-4xl mx-auto space-y-3 sm:space-y-4 text-left sm:text-center px-4">
-				<p class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
+				<p class="text-base sm:text-lg md:text-xl text-gray-700 leading-[1.4]">
 					<span class="font-bold text-black">Resultados medibles:</span> Métricas acordadas y entregables transferibles.
 				</p>
-				<p class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
+				<p class="text-base sm:text-lg md:text-xl text-gray-700 leading-[1.4]">
 					<span class="font-bold text-black">Velocidad y foco:</span> Paquetes cerrados de 7-30 días.
 				</p>
-				<p class="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
+				<p class="text-base sm:text-lg md:text-xl text-gray-700 leading-[1.4]">
 					<span class="font-bold text-black">Sin humo:</span> Integraciones robustas con tu stack actual.
 				</p>
 			</div>
@@ -68,24 +68,24 @@ $services = array(
 							<div class="carousel-slide w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-3 md:px-4">
 								<!-- Card with responsive dimensions -->
 								<div class="bg-[#E6E6E6] p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] flex flex-col h-full mx-auto overflow-hidden
-											max-w-[300px] sm:max-w-[340px] md:max-w-[380px] lg:max-w-[420px] xl:max-w-[482px]">
+											max-w-[480px] sm:max-w-[400px] md:max-w-[440px] lg:max-w-[500px] xl:max-w-[560px]">
 
 									<!-- Service Image - Fixed heights -->
 									<div class="w-full flex-shrink-0 overflow-hidden">
 										<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/' . $service['image'] ); ?>"
 											 alt="<?php echo esc_attr( $service['title'] ); ?>"
-											 class="w-full h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] object-cover rounded-2xl">
+											 class="w-full h-[140px] sm:h-[160px] md:h-[180px] lg:h-[200px] xl:h-[220px] object-cover rounded-2xl">
 									</div>
 
 									<!-- Service Content - Flexible -->
 									<div class="flex flex-col flex-grow p-4 sm:p-5 md:p-6 lg:p-7">
 										<!-- Title with controlled height -->
-										<h3 class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-black text-center leading-tight mb-3 line-clamp-3">
+										<h3 class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-[#12003C] text-center leading-[1.2] mb-3 line-clamp-3">
 											<?php echo esc_html( $service['title'] ); ?>
 										</h3>
 
 										<!-- Description with controlled height -->
-										<p class="text-[10px] sm:text-xs md:text-sm lg:text-[15px] text-black text-center leading-snug mb-4 sm:mb-5 flex-grow line-clamp-4">
+										<p class="text-[10px] sm:text-xs md:text-sm lg:text-[15px] text-[#12003C] text-center leading-[1.3] mb-4 sm:mb-5 flex-grow line-clamp-4">
 											<?php echo esc_html( $service['description'] ); ?>
 										</p>
 
@@ -128,13 +128,8 @@ $services = array(
 			</div>
 
 			<!-- Dots Indicators -->
-			<div class="flex justify-center gap-2 sm:gap-3 mt-6 sm:mt-8 md:mt-10">
-				<?php foreach ( $services as $index => $service ) : ?>
-					<button class="carousel-dot w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#7E52FF]"
-							data-slide="<?php echo $index; ?>"
-							aria-label="Ir a slide <?php echo $index + 1; ?>">
-					</button>
-				<?php endforeach; ?>
+			<div id="carousel-dots" class="flex justify-center gap-2 sm:gap-3 mt-6 sm:mt-8 md:mt-10">
+				<!-- Dots will be generated dynamically by JavaScript -->
 			</div>
 
 		</div>
@@ -148,11 +143,12 @@ $services = array(
 		const slides = document.querySelectorAll('.carousel-slide');
 		const prevBtn = document.getElementById('carousel-prev');
 		const nextBtn = document.getElementById('carousel-next');
-		const dots = document.querySelectorAll('.carousel-dot');
+		const dotsContainer = document.getElementById('carousel-dots');
 
 		let currentSlide = 0;
 		let slidesPerView = 1;
 		let totalSlides = slides.length;
+		let dots = [];
 
 		// Calculate slides per view based on screen size
 		function updateSlidesPerView() {
@@ -163,6 +159,30 @@ $services = array(
 				slidesPerView = 2;
 			} else {
 				slidesPerView = 1;
+			}
+		}
+
+		// Generate dots based on number of possible positions
+		function generateDots() {
+			const maxSlide = Math.max(0, totalSlides - slidesPerView);
+			const numberOfDots = maxSlide + 1;
+
+			// Clear existing dots
+			dotsContainer.innerHTML = '';
+			dots = [];
+
+			// Create new dots
+			for (let i = 0; i <= maxSlide; i++) {
+				const dot = document.createElement('button');
+				dot.className = 'carousel-dot w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#7E52FF]';
+				dot.setAttribute('data-slide', i);
+				dot.setAttribute('aria-label', `Ir a slide ${i + 1}`);
+				dot.addEventListener('click', function() {
+					currentSlide = i;
+					updateCarousel();
+				});
+				dotsContainer.appendChild(dot);
+				dots.push(dot);
 			}
 		}
 
@@ -224,14 +244,6 @@ $services = array(
 			}
 		});
 
-		// Dot navigation
-		dots.forEach((dot, index) => {
-			dot.addEventListener('click', function() {
-				currentSlide = index;
-				updateCarousel();
-			});
-		});
-
 		// Touch/Swipe support
 		let touchStartX = 0;
 		let touchEndX = 0;
@@ -272,13 +284,22 @@ $services = array(
 		window.addEventListener('resize', function() {
 			clearTimeout(resizeTimer);
 			resizeTimer = setTimeout(function() {
+				const previousSlidesPerView = slidesPerView;
 				updateSlidesPerView();
+
+				// Only regenerate dots if slidesPerView changed
+				if (previousSlidesPerView !== slidesPerView) {
+					currentSlide = 0; // Reset to first slide on layout change
+					generateDots();
+				}
+
 				updateCarousel();
 			}, 250);
 		});
 
 		// Initialize
 		updateSlidesPerView();
+		generateDots();
 		updateCarousel();
 
 		// Auto-play (optional)

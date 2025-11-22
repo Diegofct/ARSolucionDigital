@@ -57,7 +57,7 @@
 			<!-- Desktop CTA Button -->
 			<div class="hidden lg:flex flex-shrink-0">
 				<a href="<?php echo esc_url( $contacto_url ); ?>"
-				   class="inline-block px-4 xl:px-6 py-2.5 xl:py-3 bg-gradient-to-r from-[#C7B3FF] to-[#7E52FF] text-black font-semibold rounded-lg hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl text-sm xl:text-base">
+				   class="inline-block px-6 xl:px-8 py-2.5 xl:py-3 bg-gradient-to-r from-[#7E52FF] to-[#C7B3FF] text-black font-semibold rounded-full hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl text-sm xl:text-base">
 					¿Hablamos?
 				</a>
 			</div>
@@ -105,7 +105,7 @@
 				<!-- Mobile CTA Button -->
 				<div class="mt-8">
 					<a href="<?php echo esc_url( $contacto_url ); ?>"
-					   class="block text-center px-8 py-4 bg-gradient-to-r from-[#C7B3FF] to-[#7E52FF] text-black font-bold rounded-lg hover:opacity-90 transition-all duration-300 shadow-xl text-lg sm:text-xl">
+					   class="block text-center px-8 py-4 bg-gradient-to-r from-[#7E52FF] to-[#C7B3FF] text-white font-bold rounded-full hover:opacity-90 transition-all duration-300 shadow-xl text-lg sm:text-xl">
 						¿Hablamos?
 					</a>
 				</div>

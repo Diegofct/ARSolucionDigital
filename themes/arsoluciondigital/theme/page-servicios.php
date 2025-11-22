@@ -70,21 +70,41 @@
 							'image' => 'servicio1.png',
 							'title' => 'Nuestros OPS Aceleretors: Apps internas y automatización de servicios',
 							'description' => 'De 10 pasos manuales a un flujo automático en 4-6 semanas. Menos errores, más velocidad.',
+							'list' => array(
+								'App interna (roles, validaciones, adjuntos).',
+								'Automatizaciones (aprobaciones, SLA, notificaciones).',
+								'Integraciones ERP/CRM/e-commerce + dashboard operativo.',
+							),
 						),
 						array(
 							'image' => 'servicio2.png',
 							'title' => 'MVP Kickstart: De idea a demo que vende',
 							'description' => 'MVP usable en 30 días para conseguir usuarios o levantar inversión.',
+							'list' => array(
+								'Scope mínimo (3–5 flujos críticos) y UX/UI esencial.',
+								'Pagos o importación de datos + telemetría básica.',
+								'Demo script y backlog de próximos 60–90 días.',
+							),
 						),
 						array(
 							'image' => 'servicio3.png',
 							'title' => 'Integraciones en 10 días: ERP/CRM/e-commerce',
 							'description' => 'Adiós al copiar/pegar. Sincronización fiable y datos consistentes en 7–10 días.',
+							'list' => array(
+								'Integración bidireccional (API/CSV programado).',
+								'Reconciliación, reintentos, DLQ y alertas.',
+								'Monitor básico de integraciones.',
+							),
 						),
 						array(
 							'image' => 'servicio4.png',
 							'title' => 'Web & eCommerce en 10–21 días',
 							'description' => 'Webs rápidas en WordPress y tiendas en WooCommerce/PrestaShop listas para vender, con Core Web Vitals en mente.',
+							'list' => array(
+								'Arquitectura de información y maquetación responsive.',
+								'Checkout optimizado, impuestos/envíos y SEO técnico base.',
+								'Analítica, RGPD y handover con vídeo.'
+							),
 						),
 					);
 
@@ -103,14 +123,23 @@
 							<!-- Service Content -->
 							<div class="flex flex-col flex-grow">
 								<!-- Title -->
-								<h3 class="text-base sm:text-lg md:text-xl font-bold text-black text-center leading-tight mb-3">
+								<h3 class="text-base sm:text-lg md:text-xl font-bold text-[#12003C] text-center leading-tight mb-6">
 									<?php echo esc_html( $service['title'] ); ?>
 								</h3>
 
 								<!-- Description -->
-								<p class="text-xs sm:text-sm md:text-base text-black text-center leading-relaxed mb-4 flex-grow">
+								<p class="text-xs sm:text-sm md:text-base text-[#12003C] text-center leading-[1.4] mb-6">
 									<?php echo esc_html( $service['description'] ); ?>
 								</p>
+
+								<!-- List -->
+								<?php if ( ! empty( $service['list'] ) ) : ?>
+									<ul class="text-xs sm:text-sm md:text-base text-[#12003C] space-y-2 mb-4 flex-grow list-disc list-inside text-center mx-auto max-w-md">
+										<?php foreach ( $service['list'] as $item ) : ?>
+											<li class="leading-[1.3]"><?php echo esc_html( $item ); ?></li>
+										<?php endforeach; ?>
+									</ul>
+								<?php endif; ?>
 
 								<!-- Button -->
 								<div class="flex justify-center items-center mt-auto">

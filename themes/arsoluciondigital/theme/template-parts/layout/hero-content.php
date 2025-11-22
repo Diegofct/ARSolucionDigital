@@ -9,7 +9,7 @@
 
 // Definir contenido del hero según el contexto
 $hero_title = is_front_page()
-	? 'Automatizamos tu<br>operación y <span class="text-purple-600">lanzamos<br>productos en semanas</span>,<br>no en meses'
+	? 'Automatizamos tu<br>operación y <span class="text-[#7E52FF] font-bold">lanzamos<br>productos en semanas</span>,<br>no en meses'
 	: get_the_title();
 
 $hero_description = is_front_page()
@@ -23,13 +23,13 @@ $hero_description = is_front_page()
 		<div class="max-w-5xl mx-auto text-center text-white">
 
 			<!-- Hero Title -->
-			<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight">
+			<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 md:mb-8 leading-[1.1]">
 				<?php echo wp_kses_post( $hero_title ); ?>
 			</h1>
 
 			<!-- Hero Description -->
 			<?php if ( ! empty( $hero_description ) ) : ?>
-				<p class="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 md:mb-10 text-gray-200 leading-relaxed max-w-3xl mx-auto px-4">
+				<p class="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 md:mb-10 text-gray-200 leading-[1.4] max-w-3xl mx-auto px-4">
 					<?php echo esc_html( $hero_description ); ?>
 				</p>
 			<?php endif; ?>
